@@ -19,11 +19,24 @@
     <!-- Custom CSS for Text Slider -->
     <style>
         .masthead {
-            /* This ensures the background image covers the whole area */
+            position: relative; /* Needed for the overlay */
             background-size: cover;
-            background-position: right;
+            background-position: center;
         }
-
+        /* Add a dark overlay to make text more readable */
+        .masthead::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Adjust darkness here (0.3 is 30% black) */
+        }
+        .masthead .container {
+            position: relative;
+            z-index: 2;
+        }
         .slider-container {
             height: 45px; /* Adjust height based on your font size */
             overflow: hidden;
