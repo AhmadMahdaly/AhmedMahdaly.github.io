@@ -16,13 +16,60 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <!-- Custom CSS for Text Slider -->
+    <style>
+        .masthead {
+            /* This ensures the background image covers the whole area */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-container {
+            height: 45px; /* Adjust height based on your font size */
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+
+        .slider-text {
+            position: absolute;
+            width: 100%;
+            margin: 0;
+            line-height: 45px;
+            text-align: center;
+            /* Animation */
+            animation: slide 12s infinite;
+        }
+
+        .slider-text span {
+            display: block;
+            font-size: 1.8rem; /* Adjust font size as needed */
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @keyframes slide {
+            0% { transform: translateY(0); }
+            8% { transform: translateY(0); } /* Wait */
+            16% { transform: translateY(-45px); } /* Slide to second item */
+            24% { transform: translateY(-45px); } /* Wait */
+            32% { transform: translateY(-90px); } /* Slide to third item */
+            40% { transform: translateY(-90px); } /* Wait */
+            48% { transform: translateY(-135px); } /* Slide to fourth item */
+            56% { transform: translateY(-135px); } /* Wait */
+            /* The animation continues and loops */
+            64% { transform: translateY(-180px); } /* This helps create a smooth loop */
+            100% { transform: translateY(0); }
+        }
+    </style>
 </head>
 <body id="page-top">
     <!-- Navigation-->
     <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="#page-top">Ahmed M. Mahdaly</a></li>
+            <li class="sidebar-brand"><a href="#page-top">Ahmed Mahdaly</a></li>
             <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
             <li class="sidebar-nav-item"><a href="#about">About</a></li>
             <li class="sidebar-nav-item"><a href="#services">Services</a></li>
@@ -31,13 +78,22 @@
         </ul>
     </nav>
     <!-- Header-->
-    <header class="masthead d-flex align-items-center">
+    <!-- I've added an inline style to change the background image. Replace the URL with your own. -->
+    <header class="masthead d-flex align-items-center" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop');">
         <div class="container px-4 px-lg-5 text-center">
-            <h1 class="mb-1">Hello, I'm Ahmed M. Mahdaly</h1>
-            <h3 class="mb-5">
-                <em><i class="icon-screen-smartphone" style="font-size: 0.8em;"></i> Mobile App Developer for Businesses</em>
-            </h3>
-            <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+            <h1 class="mb-3">Hello, I'm Ahmed Mahdaly</h1>
+            <!-- Text Slider -->
+            <div class="slider-container">
+                <div class="slider-text">
+                    <!-- You can change these texts to reflect your skills -->
+                    <span>Mobile App Developer</span>
+                    <span>Business Solutions Expert</span>
+                    <span>UI/UX Designer</span>
+                    <span>Flutter & React Native Specialist</span>
+                    <span>Mobile App Developer</span> <!-- Repeat the first item for a smooth loop -->
+                </div>
+            </div>
+            <a class="btn btn-primary btn-xl mt-5" href="#about">Find Out More</a>
         </div>
     </header>
     <!-- About (What I Do)-->
@@ -96,17 +152,13 @@
             <div class="row gx-0">
                 <!-- Project 1 -->
                 <div class="col-lg-6">
-                    <!-- Replace # with a link to the live project or a details page -->
                     <a class="portfolio-item" href="#">
                         <div class="caption">
                             <div class="caption-content">
-                                <!-- Replace this with your project name -->
                                 <div class="h2">Project Name One</div>
-                                <!-- Replace this with a description focusing on the problem solved for the client -->
                                 <p class="mb-0">A brief description of the project and the value it delivered. Example: "A restaurant booking app that helped increase reservations by 30%."</p>
                             </div>
                         </div>
-                        <!-- Replace the image with one from your project (600x400 is a good size) -->
                         <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+1" alt="Project 1" />
                     </a>
                 </div>
@@ -122,30 +174,6 @@
                         <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+2" alt="Project 2" />
                     </a>
                 </div>
-                <!-- Project 3 -->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Project Name Three</div>
-                                <p class="mb-0">A brief description of the project and the value it delivered.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+3" alt="Project 3" />
-                    </a>
-                </div>
-                <!-- Project 4 -->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Project Name Four</div>
-                                <p class="mb-0">A brief description of the project and the value it delivered.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+4" alt="Project 4" />
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -153,9 +181,7 @@
     <section class="content-section bg-primary text-white" id="contact">
         <div class="container px-4 px-lg-5 text-center">
             <h2 class="mb-4">Have a project idea? Let's talk!</h2>
-            <!-- Replace # with a link to your email -->
             <a class="btn btn-xl btn-light me-4" href="mailto:your-email@example.com">Contact Me Now</a>
-             <!-- Replace # with a link to your LinkedIn profile -->
             <a class="btn btn-xl btn-dark" href="#">My LinkedIn Profile</a>
         </div>
     </section>
@@ -164,15 +190,12 @@
         <div class="container px-4 px-lg-5">
             <ul class="list-inline mb-5">
                 <li class="list-inline-item">
-                     <!-- Replace # with a link to your LinkedIn profile -->
                     <a class="social-link rounded-circle text-white mr-3" href="#"><i class="icon-social-linkedin"></i></a>
                 </li>
                 <li class="list-inline-item">
-                     <!-- Replace # with a link to your Twitter (X) profile, if you have one -->
                     <a class="social-link rounded-circle text-white mr-3" href="#"><i class="icon-social-twitter"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <!-- Replace # with a link to your GitHub profile -->
                     <a class="social-link rounded-circle text-white" href="#"><i class="icon-social-github"></i></a>
                 </li>
             </ul>
