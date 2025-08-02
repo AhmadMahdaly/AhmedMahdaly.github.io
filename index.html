@@ -99,6 +99,32 @@
             margin-bottom: 15px;
             border-radius: 5px;
         }
+        /* Experience Carousel Styles */
+        .experience-panel {
+            max-width: 80%;
+            margin: 1rem auto 3rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        }
+        .experience-panel h4 {
+            color: #1D809F;
+        }
+        #experienceCarousel .carousel-control-prev-icon,
+        #experienceCarousel .carousel-control-next-icon {
+            background-color: #1D809F;
+            border-radius: 50%;
+            padding: 1.5rem;
+            background-size: 50% 50%;
+        }
+        #experienceCarousel .carousel-control-prev {
+            left: -1rem;
+        }
+        #experienceCarousel .carousel-control-next {
+            right: -1rem;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -229,41 +255,42 @@
             </div>
         </div>
     </section>
-        <!-- Experience -->
+    <!-- Experience Carousel -->
     <section class="content-section bg-primary text-white text-center" id="experience">
-        <div class="container">
+        <div class="container px-4 px-lg-5">
             <div class="content-section-heading text-center">
                 <h3 class="text-secondary mb-0">Career Path</h3>
                 <h2 class="mb-5">Work Experience</h2>
             </div>
-            <ul class="timeline">
-                <!-- Experience 1 -->
-                <li>
-                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Job Title Here</h4>
-                            <p><small class="text-white"><i class="fas fa-building"></i> Company Name | <i class="fas fa-calendar-alt text-white"></i> March 2021 - Present</small></p>
-                        </div>
-                        <div class="timeline-body">
+            <div id="experienceCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <!-- Experience 1 -->
+                    <div class="carousel-item active">
+                        <div class="experience-panel text-center">
+                            <h4>Job Title Here</h4>
+                            <p class="text-muted mb-2"><i class="fas fa-building"></i> Company Name | <i class="fas fa-calendar-alt"></i> March 2021 - Present</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cumque sunt dolores, sint.</p>
                         </div>
                     </div>
-                </li>
-                <!-- Experience 2 -->
-                <li class="timeline-inverted">
-                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Another Job Title</h4>
-                             <p><small class="text-muted"><i class="fas fa-building"></i> Another Company | <i class="fas fa-calendar-alt"></i> January 2019 - February 2021</small></p>
-                        </div>
-                        <div class="timeline-body">
+                    <!-- Experience 2 -->
+                    <div class="carousel-item">
+                        <div class="experience-panel text-center">
+                            <h4>Another Job Title</h4>
+                            <p class="text-muted mb-2"><i class="fas fa-building"></i> Another Company | <i class="fas fa-calendar-alt"></i> January 2019 - February 2021</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cumque sunt dolores, sint.</p>
                         </div>
                     </div>
-                </li>
-            </ul>
+                    <!-- Add more carousel-item divs for more experiences -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </section>
  <!-- Certificates -->
