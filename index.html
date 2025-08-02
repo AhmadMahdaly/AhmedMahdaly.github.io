@@ -259,7 +259,8 @@
                         data-images="https://placehold.co/600x400/1D809F/white?text=App+Screenshot+1,https://placehold.co/600x400/1D809F/white?text=App+Screenshot+2"
                         data-description="Developed a full-featured e-commerce mobile application for a fashion brand. Implemented secure payment gateway, real-time inventory tracking, and a personalized user dashboard. The app led to a 40% increase in mobile sales."
                         data-google-play="YOUR_GOOGLE_PLAY_LINK_HERE"
-                        data-app-store="YOUR_APP_STORE_LINK_HERE">
+                        data-app-store="YOUR_APP_STORE_LINK_HERE"
+                        data-behance="YOUR_BEHANCE_LINK_HERE">
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="h2">E-commerce App</div>
@@ -275,11 +276,12 @@
                        data-bs-toggle="modal" 
                        data-bs-target="#portfolioModal"
                        data-title="Booking System"
-                       data-video="https://www.youtube.com/embed/9YffrCViTVk"
+                       data-video=""
                        data-images="https://placehold.co/600x400/E83E8C/white?text=Booking+Screenshot+1,https://placehold.co/600x400/E83E8C/white?text=Booking+Screenshot+2"
                        data-description="Created a cross-platform booking application for a local chain of clinics. The app allows patients to schedule appointments, receive reminders, and view their medical history, reducing no-shows by 25%."
-                       data-google-play=""
-                       data-app-store="YOUR_APP_STORE_LINK_HERE">
+                       data-google-play="YOUR_GOOGLE_PLAY_LINK_HERE"
+                       data-app-store=""
+                       data-behance="">
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="h2">Clinic Booking System</div>
@@ -437,6 +439,7 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
             const description = button.getAttribute('data-description');
             const googlePlayLink = button.getAttribute('data-google-play');
             const appStoreLink = button.getAttribute('data-app-store');
+            const behanceLink = button.getAttribute('data-behance');
 
             const modalTitle = portfolioModal.querySelector('.modal-title');
             const modalVideoContainer = portfolioModal.querySelector('.modal-video');
@@ -473,7 +476,15 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                 }
             });
 
-            // Add store links if they exist
+            // Add store and Behance links if they exist
+            if (behanceLink && behanceLink.trim() !== '') {
+                const behanceBtn = document.createElement('a');
+                behanceBtn.href = behanceLink;
+                behanceBtn.className = 'btn btn-dark me-2';
+                behanceBtn.target = '_blank';
+                behanceBtn.innerHTML = '<i class="fab fa-behance"></i> View on Behance';
+                modalStoreLinks.appendChild(behanceBtn);
+            }
             if (googlePlayLink && googlePlayLink.trim() !== '') {
                 const googleBtn = document.createElement('a');
                 googleBtn.href = googlePlayLink;
