@@ -439,18 +439,26 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
             const appStoreLink = button.getAttribute('data-app-store');
 
             const modalTitle = portfolioModal.querySelector('.modal-title');
+            const modalVideoContainer = portfolioModal.querySelector('.modal-video');
             const modalVideo = portfolioModal.querySelector('#modalVideo');
             const modalDescription = portfolioModal.querySelector('#modalDescription');
             const modalGallery = portfolioModal.querySelector('#modalGallery');
             const modalStoreLinks = portfolioModal.querySelector('#modalStoreLinks');
 
             modalTitle.textContent = title;
-            modalVideo.setAttribute('src', videoSrc);
             modalDescription.textContent = description;
 
             // Clear previous content
             modalGallery.innerHTML = '';
             modalStoreLinks.innerHTML = '';
+            
+            // Handle video visibility
+            if (videoSrc && videoSrc.trim() !== '') {
+                modalVideoContainer.style.display = 'block';
+                modalVideo.setAttribute('src', videoSrc);
+            } else {
+                modalVideoContainer.style.display = 'none';
+            }
 
             // Add new images
             images.forEach(imgUrl => {
