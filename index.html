@@ -393,7 +393,6 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
             <p class="text-muted small mb-0">Copyright &copy; Ahmed Mahdaly 2025</p>
         </div>
     </footer>
-
     <!-- Portfolio Modal -->
     <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -409,6 +408,10 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                     </div>
                     <!-- Project Description -->
                     <p id="modalDescription" class="mb-4">Project description goes here.</p>
+                    <!-- Store Links -->
+                    <div id="modalStoreLinks" class="text-center mb-4">
+                        <!-- Store buttons will be inserted here by JavaScript -->
+                    </div>
                     <!-- Image Gallery -->
                     <div id="modalGallery" class="row">
                         <!-- Images will be inserted here by JavaScript -->
@@ -427,30 +430,31 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
     <script>
         const portfolioModal = document.getElementById('portfolioModal');
         portfolioModal.addEventListener('show.bs.modal', function (event) {
-            // Button that triggered the modal
             const button = event.relatedTarget;
-
-            // Extract info from data-* attributes
             const title = button.getAttribute('data-title');
             const videoSrc = button.getAttribute('data-video');
             const images = button.getAttribute('data-images').split(',');
             const description = button.getAttribute('data-description');
+            const googlePlayLink = button.getAttribute('data-google-play');
+            const appStoreLink = button.getAttribute('data-app-store');
 
-            // Update the modal's content
             const modalTitle = portfolioModal.querySelector('.modal-title');
             const modalVideo = portfolioModal.querySelector('#modalVideo');
             const modalDescription = portfolioModal.querySelector('#modalDescription');
             const modalGallery = portfolioModal.querySelector('#modalGallery');
+            const modalStoreLinks = portfolioModal.querySelector('#modalStoreLinks');
 
             modalTitle.textContent = title;
             modalVideo.setAttribute('src', videoSrc);
             modalDescription.textContent = description;
 
-            // Clear previous images
+            // Clear previous content
             modalGallery.innerHTML = '';
+            modalStoreLinks.innerHTML = '';
+
             // Add new images
             images.forEach(imgUrl => {
-                if (imgUrl) { // Check if the URL is not empty
+                if (imgUrl && imgUrl.trim() !== '') {
                     const col = document.createElement('div');
                     col.className = 'col-md-6';
                     const img = document.createElement('img');
@@ -460,6 +464,24 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                     modalGallery.appendChild(col);
                 }
             });
+
+            // Add store links if they exist
+            if (googlePlayLink && googlePlayLink.trim() !== '') {
+                const googleBtn = document.createElement('a');
+                googleBtn.href = googlePlayLink;
+                googleBtn.className = 'btn btn-dark me-2';
+                googleBtn.target = '_blank';
+                googleBtn.innerHTML = '<i class="fab fa-google-play"></i> Google Play';
+                modalStoreLinks.appendChild(googleBtn);
+            }
+            if (appStoreLink && appStoreLink.trim() !== '') {
+                const appleBtn = document.createElement('a');
+                appleBtn.href = appStoreLink;
+                appleBtn.className = 'btn btn-dark';
+                appleBtn.target = '_blank';
+                appleBtn.innerHTML = '<i class="fab fa-app-store-ios"></i> App Store';
+                modalStoreLinks.appendChild(appleBtn);
+            }
         });
 
         // Stop video when modal is closed
