@@ -78,6 +78,27 @@
         .social-link i.fab.fa-whatsapp {
             font-size: 1.5rem;
         }
+        /* Styles for the Portfolio Modal */
+        .modal-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .modal-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .modal-gallery img {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body id="page-top">
@@ -159,7 +180,7 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio-->
+    <!-- Portfolio Section -->
     <section class="content-section" id="portfolio">
         <div class="container px-4 px-lg-5">
             <div class="content-section-heading text-center">
@@ -169,26 +190,38 @@
             <div class="row gx-0">
                 <!-- Project 1 -->
                 <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
+                    <a class="portfolio-item" href="#!" 
+                       data-bs-toggle="modal" 
+                       data-bs-target="#portfolioModal"
+                       data-title="E-commerce App"
+                       data-video="https://www.youtube.com/embed/ysz5S6PUM-U"
+                       data-images="https://placehold.co/600x400/1D809F/white?text=App+Screenshot+1,https://placehold.co/600x400/1D809F/white?text=App+Screenshot+2"
+                       data-description="Developed a full-featured e-commerce mobile application for a fashion brand. Implemented secure payment gateway, real-time inventory tracking, and a personalized user dashboard. The app led to a 40% increase in mobile sales.">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Project Name One</div>
-                                <p class="mb-0">A brief description of the project and the value it delivered. Example: "A restaurant booking app that helped increase reservations by 30%."</p>
+                                <div class="h2">E-commerce App</div>
+                                <p class="mb-0">A mobile app for a fashion brand that boosted their sales.</p>
                             </div>
                         </div>
-                        <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+1" alt="Project 1" />
+                        <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+1" alt="E-commerce App" />
                     </a>
                 </div>
                 <!-- Project 2 -->
                 <div class="col-lg-6">
-                    <a class="portfolio-item" href="#">
+                    <a class="portfolio-item" href="#!"
+                       data-bs-toggle="modal" 
+                       data-bs-target="#portfolioModal"
+                       data-title="Booking System"
+                       data-video="https://www.youtube.com/embed/9YffrCViTVk"
+                       data-images="https://placehold.co/600x400/E83E8C/white?text=Booking+Screenshot+1,https://placehold.co/600x400/E83E8C/white?text=Booking+Screenshot+2"
+                       data-description="Created a cross-platform booking application for a local chain of clinics. The app allows patients to schedule appointments, receive reminders, and view their medical history, reducing no-shows by 25%.">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Project Name Two</div>
-                                <p class="mb-0">A brief description of the project and the value it delivered.</p>
+                                <div class="h2">Clinic Booking System</div>
+                                <p class="mb-0">An app that simplifies appointment scheduling for patients.</p>
                             </div>
                         </div>
-                        <img class="img-fluid" src="https://placehold.co/600x400/1D809F/FFFFFF?text=Project+2" alt="Project 2" />
+                        <img class="img-fluid" src="https://placehold.co/600x400/E83E8C/FFFFFF?text=Project+2" alt="Booking System" />
                     </a>
                 </div>
             </div>
@@ -208,10 +241,10 @@
         <div class="container px-4 px-lg-5">
             <ul class="list-inline mb-5">
                 <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/ahmed-mahdaly/"><i class="icon-social-linkedin"></i></a>
+                    <a class="social-link rounded-circle text-white mr-3" href="https://wa.me/201027705331"><i class="fab fa-whatsapp"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="https://wa.me/201027705331"><i class="fab fa-whatsapp"></i></a>
+                    <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/ahmed-mahdaly/"><i class="icon-social-linkedin"></i></a>
                 </li>
                 <li class="list-inline-item">
                     <a class="social-link rounded-circle text-white" href="https://github.com/AhmadMahdaly"><i class="icon-social-github"></i></a>
