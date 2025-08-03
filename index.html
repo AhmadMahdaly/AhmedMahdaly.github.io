@@ -483,15 +483,7 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                 }
             });
 
-            // Add store and Behance links if they exist
-            if (behanceLink && behanceLink.trim() !== '') {
-                const behanceBtn = document.createElement('a');
-                behanceBtn.href = behanceLink;
-                behanceBtn.className = 'btn btn-dark me-2';
-                behanceBtn.target = '_blank';
-                behanceBtn.innerHTML = '<i class="fab fa-behance"></i>';
-                modalStoreLinks.appendChild(behanceBtn);
-            }
+
             if (googlePlayLink && googlePlayLink.trim() !== '') {
                 const googleBtn = document.createElement('a');
                 googleBtn.href = googlePlayLink;
@@ -507,6 +499,15 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                 appleBtn.target = '_blank';
                 appleBtn.innerHTML = '<i class="fab fa-app-store-ios"></i> App Store';
                 modalStoreLinks.appendChild(appleBtn);
+            }
+                        // Add store and Behance links if they exist
+            if (behanceLink && behanceLink.trim() !== '') {
+                const behanceBtn = document.createElement('a');
+                behanceBtn.href = behanceLink;
+                behanceBtn.className = 'btn btn-dark me-2';
+                behanceBtn.target = '_blank';
+                behanceBtn.innerHTML = '<i class="fab fa-behance"></i>';
+                modalStoreLinks.appendChild(behanceBtn);
             }
         });
 
