@@ -158,6 +158,32 @@
         #experienceCarousel .carousel-control-next {
             right: -1rem;
         }
+        /* --- NEW: Portfolio Item Hover Effect --- */
+        .portfolio-item {
+            transition: all 0.3s ease-in-out;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .portfolio-item .caption {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .portfolio-item:hover .caption {
+            opacity: 1;
+            background-color: transparent !important; /* Override any theme background color */
+        }
+        /* Override the theme's clip-path effect */
+        @media (min-width: 992px) {
+            .portfolio-item:hover img,
+            .portfolio-item:hover .caption {
+                -webkit-clip-path: inset(0);
+                clip-path: inset(0);
+            }
+        }
     </style>
 </head>
 <body id="page-top">
