@@ -457,8 +457,7 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
             const modalStoreLinks = portfolioModal.querySelector('#modalStoreLinks');
 
             modalTitle.textContent = title;
-            modalDescription.textContent = description;
-
+            modalDescription.innerHTML = description.trim().replace(/\n/g, '<br>');
             // Clear previous content
             modalGallery.innerHTML = '';
             modalStoreLinks.innerHTML = '';
