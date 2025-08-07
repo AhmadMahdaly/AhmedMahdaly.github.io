@@ -526,10 +526,14 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
     </a>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <!-- NEW: Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <!-- Custom JS for Modal -->
     <script>
         const portfolioModal = document.getElementById('portfolioModal');
@@ -564,15 +568,24 @@ Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
                 modalVideoContainer.style.display = 'none';
             }
 
-            // Add new images
+
+            // Add new images with lightbox functionality
             images.forEach(imgUrl => {
                 if (imgUrl && imgUrl.trim() !== '') {
                     const col = document.createElement('div');
                     col.className = 'col-md-6';
+                    
+                    const link = document.createElement('a');
+                    link.href = imgUrl.trim();
+                    link.setAttribute('data-lightbox', `project-gallery-${title.replace(/\s+/g, '-')}`);
+                    link.setAttribute('data-title', title);
+
                     const img = document.createElement('img');
                     img.src = imgUrl.trim();
                     img.className = 'img-fluid mb-3';
-                    col.appendChild(img);
+                    
+                    link.appendChild(img);
+                    col.appendChild(link);
                     modalGallery.appendChild(col);
                 }
             });
