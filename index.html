@@ -19,7 +19,609 @@
     <script>
         tailwind.config = {
             darkMode: 'class',
+            theme: {<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Portfolio of Ahmed M. Mahdaly, a Premium Flutter Developer." />
+    <meta name="author" content="Ahmed M. Mahdaly" />
+    <title>Ahmed M. Mahdaly | Senior Flutter Developer</title>
+    
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration & Custom Styles -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
             theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            DEFAULT: '#0F172A', // Background
+                            card: '#1E293B',    // Card Background
+                        },
+                        brand: {
+                            primary: '#0F766E', // Primary
+                            accent: '#4FD1C5',  // Accent Color
+                        },
+                        light: {
+                            DEFAULT: '#FFFFFF',
+                            muted: '#CBD5E1',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0F172A;
+            color: #CBD5E1;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30,41,59,1) 0%, rgba(15,23,42,1) 100%);
+            border: 1px solid rgba(79, 209, 197, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(79, 209, 197, 0.15);
+            border-color: rgba(79, 209, 197, 0.4);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #4FD1C5, #0F766E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0F766E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4FD1C5;
+        }
+
+        /* Timeline Styles */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(79, 209, 197, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-dark">
+
+    <!-- Navbar (Glassmorphism) -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="font-heading font-bold text-xl tracking-wider text-light">AM<span class="text-brand-accent">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-accent transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-accent transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-brand-accent transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-brand-accent transition-colors">Projects</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 rounded-full bg-brand-primary/20 text-brand-accent border border-brand-accent/30 hover:bg-brand-accent hover:text-dark transition-all font-medium">
+                Let's Talk
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-primary/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-brand-accent/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
+            <!-- Text Content -->
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    <span class="text-sm font-medium text-brand-accent">Available for international opportunities</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-4">
+                    Ahmed M. <br />
+                    <span class="text-gradient">Mahdaly</span>
+                </h1>
+                
+                <h2 class="text-2xl lg:text-3xl font-light text-light mb-6">Senior Flutter Developer</h2>
+                
+                <p class="text-lg text-light-muted mb-8 leading-relaxed max-w-xl">
+                    I engineer scalable, high-performance mobile applications using Flutter, Clean Architecture, and Firebase. Bridging analytical logic with elegant UI/UX to deliver premium business solutions.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-brand-accent text-dark font-semibold hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] transition-all flex items-center gap-2">
+                        View Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/940b723eaa6cfd55905444bf9ffe3a688c213b0a/assets/Ahmed%20M.%20Mahdaly%20-%20Flutter%20cv.pdf" class="px-8 py-4 rounded-xl glass hover:bg-white/10 text-light font-semibold transition-all flex items-center gap-2 border border-white/10">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex gap-4 text-xl">
+                    <a href="https://github.com/AhmadMahdaly" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmed-mahdaly/" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:ahmed.mahdaly86@gmail.com" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/201027705331" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Image & Stats -->
+            <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                <!-- Floating Profile Image -->
+                <div class="relative w-72 h-72 lg:w-96 lg:h-96 animate-float z-20">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-primary to-brand-accent blur-md opacity-50"></div>
+                    <img src="https://images.pexels.com/photos/33275768/pexels-photo-33275768.png" alt="Ahmed Mahdaly" class="relative w-full h-full object-cover rounded-full border-4 border-dark shadow-2xl z-10 filter grayscale hover:grayscale-0 transition-all duration-500" />
+                    
+                    <!-- Decorative Glassmorphism Tags -->
+                    <div class="absolute top-10 -left-10 glass px-4 py-2 rounded-xl text-sm font-semibold text-brand-accent flex items-center gap-2 shadow-xl z-30">
+                        <i class="fab fa-flutter"></i> Flutter Expert
+                    </div>
+                    <div class="absolute bottom-10 -right-4 glass px-4 py-2 rounded-xl text-sm font-semibold text-light flex items-center gap-2 shadow-xl z-30">
+                        <i class="fas fa-code"></i> Clean Architecture
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Tech Chips Row -->
+    <div class="max-w-7xl mx-auto px-6 pb-20 relative z-10" data-aos="fade-up">
+        <div class="glass rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center divide-x divide-white/10">
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1">2+</h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Years Exp.</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1">20+</h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Projects</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1"><i class="fas fa-check-circle text-brand-accent"></i></h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Published Apps</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1"><i class="fas fa-mobile-alt text-brand-accent"></i></h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">UI/UX Focus</p>
+            </div>
+        </div>
+
+        <!-- Tech Chips -->
+        <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Flutter</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Dart</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Bloc / Cubit</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Firebase</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">REST APIs</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Clean Architecture</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Git & GitHub</span>
+        </div>
+    </div>
+
+    <!-- 2. About Me -->
+    <section id="about" class="py-24 bg-dark-card/30 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-6">Architecting <span class="text-brand-accent">Digital</span> Experiences</h2>
+                <p class="text-lg text-light-muted mb-6 leading-relaxed">
+                    I bring a highly analytical perspective to software engineering. Combining my background in Philosophy with an obsession for logic and chess, I architect mobile applications that are secure, structured, and inherently scalable.
+                </p>
+                <p class="text-lg text-light-muted leading-relaxed">
+                    I specialize in transforming complex business workflows into seamless mobile experiences. My focus remains constant: writing clean, maintainable code that drives actual business value and delivers exceptional user experiences.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="glass-card p-6 rounded-2xl">
+                    <i class="fas fa-layer-group text-3xl text-brand-accent mb-4"></i>
+                    <h4 class="font-bold mb-2">Scalable Systems</h4>
+                    <p class="text-sm text-light-muted">Implementing MVVM and Clean Architecture for future-proof apps.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl translate-y-8">
+                    <i class="fas fa-bolt text-3xl text-brand-accent mb-4"></i>
+                    <h4 class="font-bold mb-2">High Performance</h4>
+                    <p class="text-sm text-light-muted">Optimizing state management with Bloc/Cubit for 60fps UI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Technical Skills -->
+    <section id="skills" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-accent font-semibold tracking-wider uppercase mb-2">Tech Arsenal</p>
+                <h2 class="text-4xl font-bold">Technical Skills</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Mobile Dev</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Flutter</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Dart</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Custom Animations</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Responsive UI</li>
+                    </ul>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-sitemap text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Architecture</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Clean Architecture</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> MVVM Pattern</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Repository Pattern</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> SOLID Principles</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Backend & State</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Bloc / Cubit</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> REST APIs</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Firebase Services</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Supabase</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Tools</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Git / GitHub</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Postman</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Figma (UI/UX)</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Google Maps API</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Work Experience (Vertical Timeline) -->
+    <section id="experience" class="py-24 bg-dark-card/30 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold">Career Path</h2>
+            </div>
+
+            <div class="relative timeline-line pl-10 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative" data-aos="fade-up">
+                    <div class="absolute w-4 h-4 rounded-full bg-brand-accent border-4 border-dark left-[-47px] top-1.5 shadow-[0_0_10px_#4FD1C5]"></div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <span class="text-brand-accent font-semibold text-sm tracking-wider uppercase mb-2 block">May 2025 - Present</span>
+                        <h3 class="text-2xl font-bold mb-1">Mobile Application Developer</h3>
+                        <h4 class="text-lg text-light-muted mb-4">المصدر لتقنية المعلومات - SIT</h4>
+                        <p class="text-light-muted leading-relaxed mb-4">
+                            Contributing to designing and developing digital solutions tailored to client operational needs. Focused on digitizing workflows, solving critical business challenges, and enhancing efficiency through scalable and user-centric software using Flutter.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Team Collaboration</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Architecture</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Business Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative" data-aos="fade-up">
+                    <div class="absolute w-4 h-4 rounded-full bg-dark border-4 border-brand-accent left-[-47px] top-1.5"></div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <span class="text-brand-accent font-semibold text-sm tracking-wider uppercase mb-2 block">Dec 2023 - Present</span>
+                        <h3 class="text-2xl font-bold mb-1">Flutter Developer</h3>
+                        <h4 class="text-lg text-light-muted mb-4">Freelance / Independent Consultant</h4>
+                        <p class="text-light-muted leading-relaxed mb-4">
+                            Building custom mobile apps that help businesses digitize operations. Delivering scalable solutions for delivery tracking, exam systems, and internal tools utilizing Flutter, Firebase, and real-time backend integrations.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Full-Stack Mobile</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Firebase</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Client Relations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Featured Projects -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-accent font-semibold tracking-wider uppercase mb-2">Portfolio</p>
+                <h2 class="text-4xl font-bold">Featured Projects</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Project 1: Entalek -->
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover%20antalk.png" alt="Entalek App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.sitksa.entalek" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                            <a href="https://apps.apple.com/sa/app/entalek/id6749046901" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-apple"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Entalek</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">An all-in-one platform for ride-hailing and package delivery. Features live tracking on maps, secure in-app communication, transparent pricing, and dual-service management.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Google Maps API</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Real-time</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: YaMakan -->
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/yamakan.png" alt="Yamakan App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.mahdaly.yamakanID" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                            <a href="https://www.behance.net/gallery/215416713/YA-Makan-Mobile-App" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Yamakan App</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Comprehensive destination explorer for Egypt. Features dynamic search/filtering, interactive maps, booking engine, user reviews, and multilingual (AR/EN) support.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">REST API</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Localization</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Booking Engine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Booklink -->
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover.jpg" alt="Booklink" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 object-top">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.mahdaly.booklink" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Booklink تبادل الكتب</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Platform for exchanging and selling books locally. Utilizes location-based discovery, built-in chat, smart filtering, and push notifications to connect readers.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Geolocation</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Chat Integration</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Push Notifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Rifad & Al-Rifadah -->
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-white overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/rifad%20(2).png" alt="Rifad" class="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Rifad & Al-Rifadah</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Two integrated apps managing Hajj transport operations. Features role-based access, stage management, real-time bus tracking, and employee performance monitoring.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Enterprise App</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Tracking</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Role Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Certificates -->
+    <section id="certificates" class="py-24 bg-dark-card/30 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold">Certifications</h2>
+            </div>
+            
+            <!-- Grid adjusted to lg:grid-cols-3 to accommodate 5 items nicely -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate 1 -->
+                <a href="https://www.udemy.com/certificate/UC-73fed348-68a1-4bb9-b07c-25c1d006ee98/" target="_blank" class="block group" data-aos="fade-up">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 h-full">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-layer-group text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Flutter Clean Architecture</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Certificate 2 -->
+                <a href="https://www.udemy.com/certificate/UC-c4f90a4f-9d2f-4ebc-b9c1-ca3255a2a85d/" target="_blank" class="block group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 h-full">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-certificate text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">The Complete Flutter & Dart (Adv.)</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Certificate 3 -->
+                <a href="https://www.udemy.com/certificate/UC-151c9035-ef01-47e2-a47a-7d1f75e7cd06/" target="_blank" class="block group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 h-full">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-mobile-alt text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Complete Flutter Development</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Certificate 4 -->
+                <a href="https://www.udemy.com/certificate/UC-ce760d44-452b-4d40-a779-92b0692a365d/" target="_blank" class="block group" data-aos="fade-up">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 h-full">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-code-branch text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Mastering Programming (Comprehensive)</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Certificate 5 -->
+                <a href="https://www.udemy.com/certificate/UC-b9ead548-e12d-44db-8a79-74d6126ffde6/" target="_blank" class="block group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6 h-full">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fab fa-github text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Master Git & GitHub for Developers</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact CTA -->
+    <section id="contact" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-primary/10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-5xl font-bold mb-6">Let's Build Something <span class="text-brand-accent">Great</span></h2>
+            <p class="text-xl text-light-muted mb-12">Looking for a Senior Flutter Developer to bring your idea to life or scale your existing product? I'm available for freelance projects and new opportunities.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:ahmed.mahdaly86@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-accent text-dark font-bold text-lg hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] transition-all flex justify-center items-center gap-3">
+                    <i class="fas fa-envelope"></i> Send an Email
+                </a>
+                <a href="https://wa.me/201027705331" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass hover:bg-white/10 text-light font-bold text-lg transition-all border border-white/10 flex justify-center items-center gap-3">
+                    <i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 bg-dark text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-light-muted text-sm">&copy; 2025 Ahmed M. Mahdaly. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://github.com/AhmadMahdaly" class="text-light-muted hover:text-brand-accent transition-colors"><i class="fab fa-github text-xl"></i></a>
+                <a href="https://www.linkedin.com/in/ahmed-mahdaly/" class="text-light-muted hover:text-brand-accent transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-dark/80');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('shadow-lg', 'bg-dark/80');
+                nav.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body>
+</html>
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
