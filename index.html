@@ -1,662 +1,550 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Portfolio of Ahmed M. Mahdaly, a Mobile App Developer specializing in business solutions." />
+    <meta name="description" content="Portfolio of Ahmed M. Mahdaly, a Premium Flutter Developer." />
     <meta name="author" content="Ahmed M. Mahdaly" />
-    <title>Ahmed M. Mahdaly | Mobile App Developer</title>
+    <title>Ahmed M. Mahdaly | Senior Flutter Developer</title>
     
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Simple line icons-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-        <!-- NEW: Lightbox2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-    <!-- Custom CSS for Text Slider -->
-    <style>
-        .masthead {
-            position: relative; /* Needed for the overlay */
-            background-size: cover;
-            background-position: right;
-            z-index: 1;
-        }
-        /* Add a dark overlay to make text more readable */
-        .masthead::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0); /* Adjust darkness here (0.3 is 30% black) */
-        }
-        .masthead .container {
-            position: relative;
-            z-index: 2;
-        }
-        /* This ensures the menu button is always clickable */
-        .menu-toggle {
-            z-index: 3;
-        }
-        .slider-container {
-            height: 45px; /* Adjust height based on your font size */
-            overflow: hidden;
-            position: relative;
-            color: #fff;
-            text-align: left;
-        }
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .slider-text {
-            position: absolute;
-            width: 100%;
-            margin: 0;
-            line-height: 45px;
-            text-align: left;
-            /* Animation */
-            animation: slide 12s infinite;
-        }
-
-        .slider-text span {
-            display: block;
-            font-size: 1.8rem; /* Adjust font size as needed */
-            font-weight: 300;
-            font-style: italic;
-        }
-
-        @keyframes slide {
-            0% { transform: translateY(0); }
-            8% { transform: translateY(0); } /* Wait */
-            16% { transform: translateY(-45px); } /* Slide to second item */
-            24% { transform: translateY(-45px); } /* Wait */
-            32% { transform: translateY(-90px); } /* Slide to third item */
-            40% { transform: translateY(-90px); } /* Wait */
-            48% { transform: translateY(-135px); } /* Slide to fourth item */
-            56% { transform: translateY(-135px); } /* Wait */
-            /* The animation continues and loops */
-            64% { transform: translateY(-180px); } /* This helps create a smooth loop */
-            100% { transform: translateY(0); }
-        }
-        .social-link i.fab.fa-whatsapp {
-            font-size: 1.5rem;
-        }
-        /* Styles for the Portfolio Modal */
-        .modal-video {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-        }
-        .modal-video iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .modal-gallery img {
-            width: 100%;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-        /* Updated Certificate Styles */
-        .certificate-item {
-            padding: 1.5rem;
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            transition: all 0.2s ease-in-out;
-            background-color: #fff;
-        }
-        .certificate-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        .certificate-item h4 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-        .certificate-item h4 a {
-            text-decoration: none;
-            color: #212529;
-        }
-        .certificate-item h4 a:hover {
-            color: #1D809F; /* Link hover color */
-        }
-        .certificate-item i {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #D4AF37 !important;
-        }
-        /* Experience Carousel Styles */
-        .experience-panel {
-            max-width: 80%;
-            margin: 1rem auto 3rem auto;
-            padding: 2rem;
-            background-color: #fff;
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
-        }
-        .experience-panel h4 {
-            color: #1D809F;
-        }
-        #experienceCarousel .carousel-control-prev-icon,
-        #experienceCarousel .carousel-control-next-icon {
-            background-color: #1D809F;
-            border-radius: 50%;
-            padding: 1.5rem;
-            background-size: 50% 50%;
-        }
-        #experienceCarousel .carousel-control-prev {
-            left: -1rem;
-        }
-        #experienceCarousel .carousel-control-next {
-            right: -1rem;
-        }
-        /* --- NEW: Portfolio Item Hover Effect --- */
-        .portfolio-item {
-            transition: all 0.3s ease-in-out;
-        }
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
-        .portfolio-item .caption {
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .portfolio-item:hover .caption {
-            opacity: 1;
-            background-color: transparent !important; /* Override any theme background color */
-        }
-        /* Override the theme's clip-path effect */
-        @media (min-width: 992px) {
-            .portfolio-item:hover img,
-            .portfolio-item:hover .caption {
-                -webkit-clip-path: inset(0);
-                clip-path: inset(0);
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            DEFAULT: '#0F172A', // Background
+                            card: '#1E293B',    // Card Background
+                        },
+                        brand: {
+                            primary: '#0F766E', // Primary
+                            accent: '#4FD1C5',  // Accent Color
+                        },
+                        light: {
+                            DEFAULT: '#FFFFFF',
+                            muted: '#CBD5E1',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
             }
         }
- /* --- NEW: Floating WhatsApp Button --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 80px;
-            right: 40px;
-            background-color: #25D366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s;
+    </script>
+
+    <style>
+        body {
+            background-color: #0F172A;
+            color: #CBD5E1;
+            overflow-x: hidden;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: #FFF;
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30,41,59,1) 0%, rgba(15,23,42,1) 100%);
+            border: 1px solid rgba(79, 209, 197, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(79, 209, 197, 0.15);
+            border-color: rgba(79, 209, 197, 0.4);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #4FD1C5, #0F766E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0F766E;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4FD1C5;
+        }
+
+        /* Timeline Styles */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(79, 209, 197, 0.2);
         }
     </style>
 </head>
-<body id="page-top">
-    <!-- Navigation-->
-    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a class="js-scroll-trigger" href="#page-top">Ahmed Mahdaly</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#page-top">Home</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#about">About</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#services">Services</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#experience">Experience</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#certificates">Certificates</a></li>
-            <li class="sidebar-nav-item"><a class="js-scroll-trigger" href="#contact">Contact</a></li>
-        </ul>
+<body class="antialiased selection:bg-brand-accent selection:text-dark">
+
+    <nav class="fixed w-full z-50 glass border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="font-heading font-bold text-xl tracking-wider text-light">AM<span class="text-brand-accent">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-accent transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand-accent transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-brand-accent transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-brand-accent transition-colors">Projects</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 rounded-full bg-brand-primary/20 text-brand-accent border border-brand-accent/30 hover:bg-brand-accent hover:text-dark transition-all font-medium">
+                Let's Talk
+            </a>
+        </div>
     </nav>
-    <!-- Header-->
-    <!-- I've added an inline style to change the background image. Replace the URL with your own. -->
-    <header class="masthead d-flex align-items-right" style="background-image: url('https://images.pexels.com/photos/33275768/pexels-photo-33275768.png');">
-        <div class="container px-4 px-lg-5 text-start">
-            <h2 class="mb-3 text-white">Hello,</h2>
-            <h1 class="mb-3 text-white">I'm Ahmed M. Mahdaly</h1>
-            <!-- Text Slider -->
-            <div class="slider-container">
-                <div class="slider-text">
-                    <!-- You can change these texts to reflect your skills -->
-                    <span>Mobile App Developer</span>
-                    <span>Business Solutions Expert</span>
-                    <span>UI/UX Designer</span>
-                    <span>Flutter Developer</span>
-                    <span>Mobile App Developer</span> <!-- Repeat the first item for a smooth loop -->
-                </div>
-            </div>
-            <a class="btn btn-light btn-xl mt-5" href="#about">Find Out More</a>
-        </div>
-    </header>
-    <!-- About (What I Do)-->
-    <section class="content-section bg-light" id="about">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-10">
-                    <h2>Turning Your Business Idea into a High-Performance Mobile App</h2>
-                    <p class="lead mb-5" style="font-size: 1.1rem;">
-                        I specialize in developing custom mobile applications for businesses, transforming concepts and ideas into secure, user-friendly, and scalable products. My focus is on building apps that not only look great but also deliver tangible results and a strong return on investment for my clients.
-                    </p>
-                    <!-- Upload your CV in PDF format and replace # with the link -->
-                    <a class="btn btn-dark btn-xl" href="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/940b723eaa6cfd55905444bf9ffe3a688c213b0a/assets/Ahmed%20M.%20Mahdaly%20-%20Flutter%20cv.pdf">Download CV</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services-->
-    <section class="content-section bg-primary text-white text-center" id="services">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading">
-                <h3 class="text-secondary mb-0">What I Offer</h3>
-                <h2 class="mb-5">My Specialized Services</h2>
-            </div>
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                    <h4><strong>Custom App Development</strong></h4>
-                    <p class="text-faded mb-0">Building cross-platform apps tailored to your unique business needs.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                    <h4><strong>UI/UX Design</strong></h4>
-                    <p class="text-faded mb-0">Designing intuitive and engaging interfaces that ensure user retention and achieve your goals.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-rocket"></i></span>
-                    <h4><strong>App Strategy & Launch</strong></h4>
-                    <p class="text-faded mb-0">Helping you define a clear app strategy and successfully publishing it on the Apple and Google stores.</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-settings"></i></span>
-                    <h4><strong>Support & Maintenance</strong></h4>
-                    <p class="text-faded mb-0">Providing technical support and updates to ensure your app runs efficiently and securely.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section class="content-section" id="portfolio">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">Portfolio</h3>
-                <h2 class="mb-5">Recent Projects</h2>
-            </div>
-            <div class="row gx-0">
-                <!-- Project 1 YaMakan -->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#portfolioModal"
-                        data-title="Yamakan App"
-                        data-video=""
-                        data-images="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/4-1.png,https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/3-1.png"
-                        data-description="Developed a comprehensive mobile application to explore entertainment destinations and discover new activities across Egypt. The app allows users to browse hundreds of places, access curated tourist programs, discover nearby events, and make easy reservations.
 
-                        Key Features Implemented:
-                        • Dynamic Search & Filtering: Built a powerful search system allowing users to filter places by category, location, rating, and tags like “family-friendly.”
-                        • Governorate-Based Tourist Programs: Designed dedicated sections for each governorate featuring suggested itineraries and top attractions.
-                        • In-App Booking System: Implemented a seamless booking engine for events and activities with instant confirmation notifications.
-                        • Interactive Map: Developed a map displaying all locations with interactive markers and detailed info windows.
-                        • User Reviews & Ratings: Engineered a complete user review and rating system to help others make informed decisions.
-                        • Multilingual Support: Ensured full support for both English and Arabic."
-                        data-google-play="https://play.google.com/store/apps/details?id=com.mahdaly.yamakanID"
-                        data-app-store=""
-                        data-behance="https://www.behance.net/gallery/215416713/YA-Makan-Mobile-App">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Yamakan App</div>
-                                <p class="mb-0">An application to search for places to go out in Egypt and discover new activities.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/yamakan.png" alt="Yamakan App" />
+    <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-primary/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-brand-accent/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    <span class="text-sm font-medium text-brand-accent">Available for international opportunities</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-4">
+                    Ahmed M. <br />
+                    <span class="text-gradient">Mahdaly</span>
+                </h1>
+                
+                <h2 class="text-2xl lg:text-3xl font-light text-light mb-6">Senior Flutter Developer</h2>
+                
+                <p class="text-lg text-light-muted mb-8 leading-relaxed max-w-xl">
+                    I engineer scalable, high-performance mobile applications using Flutter, Clean Architecture, and Firebase. Bridging analytical logic with elegant UI/UX to deliver premium business solutions.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-brand-accent text-dark font-semibold hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] transition-all flex items-center gap-2">
+                        View Projects <i class="fas fa-arrow-right"></i>
                     </a>
-                </div>
-                <!-- Project 2 Booklink-->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!"
-                       data-bs-toggle="modal" 
-                       data-bs-target="#portfolioModal"
-                       data-title="Booklink تبادل الكتب"
-                       data-video=""
-                       data-images="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/6.png,https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/5.png"
-                       data-description="A user-friendly platform for exchanging, selling, and sharing books with ease. Discover available books near you, connect with fellow readers, and keep books in circulation instead of letting them collect dust on shelves.
-
-                        Key Features Implemented:
-                        • Book Exchange, Sale, and Sharing System: Allows users to list books for exchange or sale and manage their personal book listings directly from the app.
-                        • Location-Based Book Discovery: Users can browse books available nearby using geolocation and filter by categories such as fiction, history, education, or children's books.
-                        • Built-in Chat Feature: Enables direct communication between users to arrange meetings, discuss book conditions, or negotiate trades or sales.
-                        • Personal Book Shelf Management: Users can add, update, or remove book listings with images, descriptions, and availability status.
-                        • Favorites and Wish List: Lets users bookmark books they’re interested in, making it easy to revisit or contact owners later.
-                        • User Profiles and Reputation System: Each user has a profile showing their exchange history, ratings, and activity to build trust within the community.
-                        • Simple and Intuitive UI/UX: Clean interface with smooth navigation designed for a seamless browsing and communication experience.
-                        • Smart Filtering and Sorting Options: Users can filter books by distance, genre, condition, or recent uploads to quickly find what suits them.
-                        • Push Notifications: Notifies users when someone sends a message, a new book is listed nearby, or a saved book becomes available."
-                       data-google-play="https://play.google.com/store/apps/details?id=com.mahdaly.booklink"
-                       data-app-store=""
-                       data-behance="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Booklink تبادل الكتب</div>
-                                <p class="mb-0">A platform for easily exchanging, selling, and sharing books.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover.jpg" alt="Booklink تبادل الكتب" />
-                    </a>
-                </div>
-                                <!-- Project Rifad & Al-Rifadah -->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!"
-                       data-bs-toggle="modal" 
-                       data-bs-target="#portfolioModal"
-                       data-title="Rifad & Al-Rifadah"
-                       data-video=""
-                       data-images="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/rifad%20(2).png,https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/rifad%20(1).png"
-                       data-description="to manage and monitor all transportation operations during the Hajj season.
-
-The system efficiently organizes every stage and day of the Hajj journey — defining each route, assigning roles, and managing the responsibilities of employees based on their specific permissions and duties.
-
-Key Features:
-• Role-based access with more than 5 defined operational roles.
-• Structured management of Hajj stages and timelines (start and end times).
-• Tracking the number of pilgrims, trips, and buses per stage.
-• Real-time monitoring of bus routes from departure to arrival.
-• Performance tracking of each employee according to their assigned role.
-• This system enhances transportation efficiency during Hajj, ensuring seamless coordination, accurate scheduling, and a well-managed pilgrim movement across all stages."
-                       data-google-play=""
-                       data-app-store=""
-                       data-behance="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Rifad & Al-Rifadah</div>
-                                <p class="mb-0">Two integrated apps for managing and monitoring Hajj transport operations in real time, designed for Saudi travel and tourism companies.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/rifad%20(2).png" alt="Rifad & Al-Rifadah" />
+                    <a href="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/940b723eaa6cfd55905444bf9ffe3a688c213b0a/assets/Ahmed%20M.%20Mahdaly%20-%20Flutter%20cv.pdf" class="px-8 py-4 rounded-xl glass hover:bg-white/10 text-light font-semibold transition-all flex items-center gap-2 border border-white/10">
+                        <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
 
-                    <!-- Project 3 Entalek-->
-                <div class="col-lg-6">
-                    <a class="portfolio-item" href="#!"
-                       data-bs-toggle="modal" 
-                       data-bs-target="#portfolioModal"
-                       data-title="Entalek"
-                       data-video="https://www.youtube.com/embed/6s7CrDNYKqU"
-                       data-images="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/4.png,https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/3.png"
-                       data-description="Entalek is your all-in-one platform for ride-hailing and package delivery, designed to streamline daily operations for businesses:
-Ride-Hailing: Fast and reliable car booking with real-time tracking and transparent pricing.
-Package Delivery: Send documents or shipments easily with live tracking and on-time delivery.
+                <div class="flex gap-4 text-xl">
+                    <a href="https://github.com/AhmadMahdaly" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmed-mahdaly/" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:ahmed.mahdaly86@gmail.com" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/201027705331" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:text-brand-accent hover:border-brand-accent transition-all"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
 
-Key Features for Your Business:
-• Two Services in One App: Manage transportation and delivery from a single platform.
-• Real-Time Tracking: Monitor rides and deliveries live on the map.
-• Secure In-App Communication: Message or call drivers without exposing your phone number.
-• Transparent Pricing: Know the cost before you confirm the order.
-• Reliable Service: Vetted drivers and quality control ensure professional service."
-                       data-google-play="https://play.google.com/store/apps/details?id=com.sitksa.entalek"
-                       data-app-store="https://apps.apple.com/sa/app/entalek/id6749046901"
-                       data-behance="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <div class="h2">Entalek</div>
-                                <p class="mb-0">Your go-to app for rides and package delivery. Book your trip or send a package.</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover%20antalk.png" alt="Entalek app" />
-                    </a>
-                </div> 
-            </div>
-        </div>
-    </section>
-    <!-- Experience Carousel -->
-    <section class="content-section bg-primary text-white text-center" id="experience">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">Career Path</h3>
-                <h2 class="mb-5">Work Experience</h2>
-            </div>
-            <div id="experienceCarousel" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-inner">
-                    <!-- Experience 1 -->
-                    <div class="carousel-item active">
-                        <div class="experience-panel text-center">
-                            <h4>Mobile Application Developer</h4>
-                            <p class="text-muted mb-2">المصدر لتقنية المعلومات - SIT | May 2025 - Present</p>
-                            <p class="text-muted text-start">At a software development company specializing in building custom systems and applications for businesses, I contributed to designing and developing digital solutions tailored to each client’s operational needs. Our mission was to digitize workflows, solve critical business challenges, and enhance efficiency through scalable and user-centric software.</p>
-                            <p class="text-muted text-start">My responsibilities included collaborating with cross-functional teams to analyze business requirements, architect system functionalities, and deliver robust applications that streamline internal processes and improve customer experiences.</p>
-                        </div>
+            <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-72 h-72 lg:w-96 lg:h-96 animate-float z-20">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-primary to-brand-accent blur-md opacity-50"></div>
+                    <img src="https://images.pexels.com/photos/33275768/pexels-photo-33275768.png" alt="Ahmed Mahdaly" class="relative w-full h-full object-cover rounded-full border-4 border-dark shadow-2xl z-10 filter grayscale hover:grayscale-0 transition-all duration-500" />
+                    
+                    <div class="absolute top-10 -left-10 glass px-4 py-2 rounded-xl text-sm font-semibold text-brand-accent flex items-center gap-2 shadow-xl z-30">
+                        <i class="fab fa-flutter"></i> Flutter Expert
                     </div>
-                    <!-- Experience 2 -->
-                    <div class="carousel-item">
-                        <div class="experience-panel text-center">
-                            <h4>Flutter Developer</h4>
-                            <p class="text-muted mb-2">Freelance | Dec 2023 - Present</p>
-                            <p class="text-muted text-start">As a freelance Flutter developer, I build custom mobile apps that help businesses digitize their operations, solve real problems, and improve efficiency. I work closely with clients to turn their workflows into smart, scalable solutions—whether for delivery tracking, exam systems, or internal business tools. Using Flutter, Firebase, and real-time technologies, I deliver clean, user-friendly apps that save time and support growth.</p>
-                        </div>
+                    <div class="absolute bottom-10 -right-4 glass px-4 py-2 rounded-xl text-sm font-semibold text-light flex items-center gap-2 shadow-xl z-30">
+                        <i class="fas fa-code"></i> Clean Architecture
                     </div>
-                    <!-- Add more carousel-item divs for more experiences -->
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </section>
- <!-- Certificates -->
-    <section class="content-section" id="certificates">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">My Credentials</h3>
-                <h2 class="mb-5">Certificates & Awards</h2>
-            </div>
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <!-- Certificate 1 -->
-                <div class="col-lg-4 col-md-6 mb-4 text-center certificate-item">
-                    <i class="fas fa-award"></i>
-                   <h4><strong><a href="https://www.udemy.com/certificate/UC-c4f90a4f-9d2f-4ebc-b9c1-ca3255a2a85d/" target="_blank">The Complete Flutter & Dart : Basics to Advanced [Arabic]</a></strong></h4>
-                        <p class="text-muted mb-0">Issued by: Udemy</p>
-                </div>
-                <!-- Certificate 2 -->
-                <div class="col-lg-4 col-md-6 mb-4 text-center certificate-item">
-                    <i class="fas fa-award"></i>
-                    <h4><strong><a href="https://www.udemy.com/certificate/UC-151c9035-ef01-47e2-a47a-7d1f75e7cd06/" target="_blank">Complete Flutter & Dart Development Course [Arabic]</a></strong></h4>
-                        <p class="text-muted mb-0">Issued by: Udemy</p>
-                </div>
-                <!-- Certificate 3 -->
-                <div class="col-lg-4 col-md-6 mb-4 text-center certificate-item">
-                    <i class="fas fa-award"></i>
-                    <h4><strong><a href="https://www.udemy.com/certificate/UC-ce760d44-452b-4d40-a779-92b0692a365d/" target="_blank">Mastering Programming: A Comprehensive Course In [Arabic]</a></strong></h4>
-                        <p class="text-muted mb-0">Issued by: Udemy</p>
-                </div>
-                <!-- Certificate 4 -->
-                <div class="col-lg-4 col-md-6 mb-4 text-center certificate-item">
-                    <i class="fas fa-award"></i>
-                    <h4><strong><a href="https://www.udemy.com/certificate/UC-b9ead548-e12d-44db-8a79-74d6126ffde6/" target="_blank">
-Master Git & GitHub: Essential Skills for Developers[Arabic]</a></strong></h4>
-                        <p class="text-muted mb-0">Issued by: Udemy</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Call to Action-->
-    <section class="content-section bg-primary text-white" id="contact">
-        <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">Have a project idea? Let's talk!</h2>
-            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
-            <a class="btn btn-xl btn-light me-4" href="mailto:ahmed.mahdaly86@gmail.com">Contact Me Now</a>
-            <a class="btn btn-xl btn-dark" href="https://www.linkedin.com/in/ahmed-mahdaly/">My LinkedIn Profile</a>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer text-center">
-        <div class="container px-4 px-lg-5">
-            <ul class="list-inline mb-5">
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="https://wa.me/201027705331"><i class="fab fa-whatsapp"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/ahmed-mahdaly/"><i class="icon-social-linkedin"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" href="https://github.com/AhmadMahdaly"><i class="icon-social-github"></i></a>
-                </li>
-            </ul>
-            <p class="text-muted small mb-0">Copyright &copy; Ahmed Mahdaly 2025</p>
-        </div>
-    </footer>
-    <!-- Portfolio Modal -->
-    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="portfolioModalLabel">Project Title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Video Player -->
-                    <div class="modal-video mb-4">
-                        <iframe id="modalVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <!-- Project Description -->
-                    <p id="modalDescription" class="mb-4">Project description goes here.</p>
-                    <!-- Store Links -->
-                    <div id="modalStoreLinks" class="text-center mb-4">
-                        <!-- Store buttons will be inserted here by JavaScript -->
-                    </div>
-                    <!-- Image Gallery -->
-                    <div id="modalGallery" class="row">
-                        <!-- Images will be inserted here by JavaScript -->
-                    </div>
-                </div>
+
+    <div class="max-w-7xl mx-auto px-6 pb-20 relative z-10" data-aos="fade-up">
+        <div class="glass rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center divide-x divide-white/10">
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1">2+</h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Years Exp.</p>
             </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1">20+</h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Projects</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1"><i class="fas fa-check-circle text-brand-accent"></i></h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">Published Apps</p>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-light mb-1"><i class="fas fa-mobile-alt text-brand-accent"></i></h3>
+                <p class="text-sm text-light-muted uppercase tracking-wider">UI/UX Focus</p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Flutter</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Dart</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Bloc / Cubit</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Firebase</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">REST APIs</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Clean Architecture</span>
+            <span class="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-accent border border-brand-accent/20 text-sm font-medium">Git & GitHub</span>
         </div>
     </div>
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/201027705331" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- NEW: Lightbox2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <!-- Custom JS for Modal -->
-    <script>
-        const portfolioModal = document.getElementById('portfolioModal');
-        portfolioModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const title = button.getAttribute('data-title');
-            const videoSrc = button.getAttribute('data-video');
-            const images = button.getAttribute('data-images').split(',');
-            const description = button.getAttribute('data-description');
-            const googlePlayLink = button.getAttribute('data-google-play');
-            const appStoreLink = button.getAttribute('data-app-store');
-            const behanceLink = button.getAttribute('data-behance');
 
-            const modalTitle = portfolioModal.querySelector('.modal-title');
-            const modalVideoContainer = portfolioModal.querySelector('.modal-video');
-            const modalVideo = portfolioModal.querySelector('#modalVideo');
-            const modalDescription = portfolioModal.querySelector('#modalDescription');
-            const modalGallery = portfolioModal.querySelector('#modalGallery');
-            const modalStoreLinks = portfolioModal.querySelector('#modalStoreLinks');
+    <section id="about" class="py-24 bg-dark-card/30 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-6">Architecting <span class="text-brand-accent">Digital</span> Experiences</h2>
+                <p class="text-lg text-light-muted mb-6 leading-relaxed">
+                    Based in Al Shorouk, Egypt, I bring a highly analytical perspective to software engineering. Combining my background as a PhD Researcher in Law with an obsession for logic (and chess), I architect mobile applications that are secure, structured, and inherently scalable.
+                </p>
+                <p class="text-lg text-light-muted leading-relaxed">
+                    I specialize in transforming complex business workflows into seamless mobile experiences. Whether collaborating with local tech firms or establishing a footprint on global platforms like Upwork, my focus remains constant: writing clean, maintainable code that drives actual business value.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="glass-card p-6 rounded-2xl">
+                    <i class="fas fa-layer-group text-3xl text-brand-accent mb-4"></i>
+                    <h4 class="font-bold mb-2">Scalable Systems</h4>
+                    <p class="text-sm text-light-muted">Implementing MVVM and Clean Architecture for future-proof apps.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl translate-y-8">
+                    <i class="fas fa-bolt text-3xl text-brand-accent mb-4"></i>
+                    <h4 class="font-bold mb-2">High Performance</h4>
+                    <p class="text-sm text-light-muted">Optimizing state management with Bloc/Cubit for 60fps UI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            modalTitle.textContent = title;
-            modalDescription.innerHTML = description.trim().replace(/\n/g, '<br>');
-            // Clear previous content
-            modalGallery.innerHTML = '';
-            modalStoreLinks.innerHTML = '';
+    <section id="skills" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-accent font-semibold tracking-wider uppercase mb-2">Tech Arsenal</p>
+                <h2 class="text-4xl font-bold">Technical Skills</h2>
+            </div>
             
-            // Handle video visibility
-            if (videoSrc && videoSrc.trim() !== '') {
-                modalVideoContainer.style.display = 'block';
-                modalVideo.setAttribute('src', videoSrc);
-            } else {
-                modalVideoContainer.style.display = 'none';
-            }
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Mobile Dev</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Flutter</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Dart</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Custom Animations</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Responsive UI</li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-sitemap text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Architecture</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Clean Architecture</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> MVVM Pattern</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Repository Pattern</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> SOLID Principles</li>
+                    </ul>
+                </div>
 
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Backend & State</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Bloc / Cubit</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> REST APIs</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Firebase Services</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Supabase</li>
+                    </ul>
+                </div>
 
-            // Add new images with lightbox functionality
-            images.forEach(imgUrl => {
-                if (imgUrl && imgUrl.trim() !== '') {
-                    const col = document.createElement('div');
-                    col.className = 'col-md-6';
-                    
-                    const link = document.createElement('a');
-                    link.href = imgUrl.trim();
-                    link.setAttribute('data-lightbox', `project-gallery-${title.replace(/\s+/g, '-')}`);
-                    link.setAttribute('data-title', title);
+                <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-lg bg-brand-primary/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-2xl text-brand-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 border-b border-white/10 pb-4">Tools</h3>
+                    <ul class="space-y-3 text-light-muted">
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Git / GitHub</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Postman</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Figma (UI/UX)</li>
+                        <li><i class="fas fa-check text-brand-accent mr-2"></i> Google Maps API</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    const img = document.createElement('img');
-                    img.src = imgUrl.trim();
-                    img.className = 'img-fluid mb-3';
-                    
-                    link.appendChild(img);
-                    col.appendChild(link);
-                    modalGallery.appendChild(col);
-                }
-            });
+    <section id="experience" class="py-24 bg-dark-card/30 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold">Career Path</h2>
+            </div>
 
+            <div class="relative timeline-line pl-10 space-y-12">
+                <div class="relative" data-aos="fade-up">
+                    <div class="absolute w-4 h-4 rounded-full bg-brand-accent border-4 border-dark left-[-47px] top-1.5 shadow-[0_0_10px_#4FD1C5]"></div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <span class="text-brand-accent font-semibold text-sm tracking-wider uppercase mb-2 block">May 2025 - Present</span>
+                        <h3 class="text-2xl font-bold mb-1">Mobile Application Developer</h3>
+                        <h4 class="text-lg text-light-muted mb-4">المصدر لتقنية المعلومات - SIT</h4>
+                        <p class="text-light-muted leading-relaxed mb-4">
+                            Contributing to designing and developing digital solutions tailored to client operational needs. Focused on digitizing workflows, solving critical business challenges, and enhancing efficiency through scalable and user-centric software using Flutter.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Team Collaboration</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Architecture</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Business Logic</span>
+                        </div>
+                    </div>
+                </div>
 
-            if (googlePlayLink && googlePlayLink.trim() !== '') {
-                const googleBtn = document.createElement('a');
-                googleBtn.href = googlePlayLink;
-                googleBtn.className = 'btn btn-dark me-2';
-                googleBtn.target = '_blank';
-                googleBtn.innerHTML = '<i class="fab fa-google-play"></i> Google Play';
-                modalStoreLinks.appendChild(googleBtn);
-            }
-            if (appStoreLink && appStoreLink.trim() !== '') {
-                const appleBtn = document.createElement('a');
-                appleBtn.href = appStoreLink;
-                appleBtn.className = 'btn btn-dark';
-                appleBtn.target = '_blank';
-                appleBtn.innerHTML = '<i class="fab fa-app-store-ios"></i> App Store';
-                modalStoreLinks.appendChild(appleBtn);
-            }
-                        // Add store and Behance links if they exist
-            if (behanceLink && behanceLink.trim() !== '') {
-                const behanceBtn = document.createElement('a');
-                behanceBtn.href = behanceLink;
-                behanceBtn.className = 'btn btn-dark me-2';
-                behanceBtn.target = '_blank';
-                behanceBtn.innerHTML = '<i class="fab fa-behance"></i>';
-                modalStoreLinks.appendChild(behanceBtn);
-            }
+                <div class="relative" data-aos="fade-up">
+                    <div class="absolute w-4 h-4 rounded-full bg-dark border-4 border-brand-accent left-[-47px] top-1.5"></div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <span class="text-brand-accent font-semibold text-sm tracking-wider uppercase mb-2 block">Dec 2023 - Present</span>
+                        <h3 class="text-2xl font-bold mb-1">Flutter Developer</h3>
+                        <h4 class="text-lg text-light-muted mb-4">Freelance / Independent Consultant</h4>
+                        <p class="text-light-muted leading-relaxed mb-4">
+                            Building custom mobile apps that help businesses digitize operations. Delivering scalable solutions for delivery tracking, exam systems, and internal tools utilizing Flutter, Firebase, and real-time backend integrations.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Full-Stack Mobile</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Firebase</span>
+                            <span class="text-xs px-3 py-1 bg-white/5 rounded-full border border-white/10">Client Relations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-accent font-semibold tracking-wider uppercase mb-2">Portfolio</p>
+                <h2 class="text-4xl font-bold">Featured Projects</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover%20antalk.png" alt="Entalek App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.sitksa.entalek" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                            <a href="https://apps.apple.com/sa/app/entalek/id6749046901" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-apple"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Entalek</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">An all-in-one platform for ride-hailing and package delivery. Features live tracking on maps, secure in-app communication, transparent pricing, and dual-service management.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Google Maps API</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Real-time</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/yamakan.png" alt="Yamakan App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.mahdaly.yamakanID" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                            <a href="https://www.behance.net/gallery/215416713/YA-Makan-Mobile-App" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Yamakan App</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Comprehensive destination explorer for Egypt. Features dynamic search/filtering, interactive maps, booking engine, user reviews, and multilingual (AR/EN) support.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">REST API</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Localization</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Booking Engine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/Cover.jpg" alt="Booklink" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 object-top">
+                        <div class="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.mahdaly.booklink" target="_blank" class="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-light hover:text-brand-accent hover:scale-110 transition-all"><i class="fab fa-google-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Booklink تبادل الكتب</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Platform for exchanging and selling books locally. Utilizes location-based discovery, built-in chat, smart filtering, and push notifications to connect readers.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Geolocation</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Chat Integration</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Push Notifications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-white overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/AhmadMahdaly/AhmedMahdaly.github.io/refs/heads/main/assets/rifad%20(2).png" alt="Rifad" class="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-brand-accent transition-colors">Rifad & Al-Rifadah</h3>
+                        <p class="text-light-muted mb-6 line-clamp-3">Two integrated apps managing Hajj transport operations. Features role-based access, stage management, real-time bus tracking, and employee performance monitoring.</p>
+                        <div class="flex gap-2 flex-wrap mt-auto">
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Enterprise App</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Tracking</span>
+                            <span class="text-xs px-3 py-1 bg-brand-primary/20 text-brand-accent rounded-full">Role Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-24 bg-dark-card/30 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold">Certifications</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://www.udemy.com/certificate/UC-c4f90a4f-9d2f-4ebc-b9c1-ca3255a2a85d/" target="_blank" class="block group" data-aos="fade-up">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-certificate text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">The Complete Flutter & Dart (Adv.)</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.udemy.com/certificate/UC-151c9035-ef01-47e2-a47a-7d1f75e7cd06/" target="_blank" class="block group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-certificate text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Complete Flutter Development</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.udemy.com/certificate/UC-ce760d44-452b-4d40-a779-92b0692a365d/" target="_blank" class="block group" data-aos="fade-up">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fas fa-code-branch text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Mastering Programming (Comprehensive)</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.udemy.com/certificate/UC-b9ead548-e12d-44db-8a79-74d6126ffde6/" target="_blank" class="block group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-6 rounded-2xl flex items-center gap-6">
+                        <div class="w-16 h-16 rounded-full bg-brand-primary/20 flex-shrink-0 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-dark transition-all">
+                            <i class="fab fa-github text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 group-hover:text-brand-accent transition-colors">Master Git & GitHub for Developers</h4>
+                            <p class="text-sm text-light-muted">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-primary/10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-5xl font-bold mb-6">Let's Build Something <span class="text-brand-accent">Great</span></h2>
+            <p class="text-xl text-light-muted mb-12">Looking for a Senior Flutter Developer to bring your idea to life or scale your existing product? I'm available for global freelance projects and full-time opportunities.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="mailto:ahmed.mahdaly86@gmail.com" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-accent text-dark font-bold text-lg hover:shadow-[0_0_20px_rgba(79,209,197,0.4)] transition-all flex justify-center items-center gap-3">
+                    <i class="fas fa-envelope"></i> Send an Email
+                </a>
+                <a href="https://wa.me/201027705331" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass hover:bg-white/10 text-light font-bold text-lg transition-all border border-white/10 flex justify-center items-center gap-3">
+                    <i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-white/5 bg-dark text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-light-muted text-sm">&copy; 2025 Ahmed M. Mahdaly. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://github.com/AhmadMahdaly" class="text-light-muted hover:text-brand-accent transition-colors"><i class="fab fa-github text-xl"></i></a>
+                <a href="https://www.linkedin.com/in/ahmed-mahdaly/" class="text-light-muted hover:text-brand-accent transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animate On Scroll
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+            duration: 800,
+            easing: 'ease-out-cubic',
         });
 
-        // Stop video when modal is closed
-        portfolioModal.addEventListener('hide.bs.modal', function (event) {
-            const modalVideo = portfolioModal.querySelector('#modalVideo');
-            modalVideo.setAttribute('src', '');
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-dark/80');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('shadow-lg', 'bg-dark/80');
+                nav.classList.add('bg-transparent');
+            }
         });
     </script>
 </body>
